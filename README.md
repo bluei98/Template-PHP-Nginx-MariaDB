@@ -2,6 +2,12 @@
 
 * This Template using HTTPS(443 port) only.
 
+## Version Infomation
+
+* PHP: 8.0.13-fpm
+* MariaDB: Latest version
+* Nginx: Lastest version
+
 ## Quick Start
 
 ```sh
@@ -10,8 +16,8 @@ $ git clone https://github.com/bluei98/Template-PHP-Nginx-MariaDB.git
 $ cd Template-PHP-Nginx-MariaDB && docker-compose up -d
 ```
 
-## Version Infomation
+## Quick Install SSL Certification
 
-* PHP: 8.0.13-fpm
-* MariaDB: Latest version
-* Nginx: Lastest version
+```sh
+$ ./initCertification.sh
+```
