@@ -1,0 +1,8 @@
+{
+    "db": {
+        "host": "mariadb",
+        "user": "root",
+        "pass": "password",
+        "database": "master"
+    }
+}

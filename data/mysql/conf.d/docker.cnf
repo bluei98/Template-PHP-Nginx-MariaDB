@@ -1,0 +1,6 @@
+[mysqld]
+skip-host-cache
+skip-name-resolve
+
+ft_min_word_len=1
+innodb_ft_min_token_size=2

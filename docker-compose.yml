@@ -1,0 +1,39 @@
+version: "3.7"
+services:
+  mariadb:
+    image: mariadb:latest
+    restart: unless-stopped
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
+      - TZ=Asia/Seoul
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./data/mysql/data:/var/lib/mysql
+      - ./data/mysql/conf.d:/etc/mysql/conf.d
+  app:
+    build:
+      context: ./docker/php
+      dockerfile: dockerfile
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - ./src:/var/www/html
+      - ./data/config:/var/www/config
+    environment:
+      TZ: "Asia/Seoul"
+  web:
+    image: nginx:latest
+    restart: unless-stopped
+    depends_on:
+      - app
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./data/nginx/conf.d:/etc/nginx/conf.d
+      - ./data/nginx/certs:/etc/nginx/certs
+      - ./src:/var/www/html
+    environment:
+      TZ: "Asia/Seoul"
