@@ -1,6 +1,7 @@
 # Template-PHP-Nginx-MariaDB
 
-* This Template using HTTPS(443 port) only.
+This Template is PHP, Nginx, MariaDB running on Docker Service.
+For the https service, it also supports scripts that can generate ssl certificates.
 
 ## Version Infomation
 
